@@ -1,0 +1,734 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1</title>
+    <link rel="stylesheet" href="Task-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+
+    }
+
+    .imgBox img {
+        width: 150px;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        min-height: 100vh;
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21);
+        background-size: 300% 300%;
+        animation: color 12s ease-in-out infinite;
+        background-attachment: fixed;
+    }
+
+    @keyframes color {
+        0% {
+            background-position: 0 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0 50%;
+        }
+    }
+
+    section {
+        position: relative;
+    }
+
+    .line {
+        width: 80%;
+        height: 2px;
+        border: 0 none;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: linear-gradient(to right, transparent, rgba(60, 60, 60, 0.657), transparent);
+        margin-bottom: 50px;
+    }
+
+    .container {
+
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 40px 0;
+    }
+
+    .container .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0.252);
+        margin: 20px;
+        box-sizing: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+    }
+
+    .container .card .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: 0.5s;
+
+    }
+
+    .container .card:hover .content {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+
+    .container .card .content .imgBox {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 0% 50% 0% 50% / 0% 50% 0% 50%;
+        overflow: hidden;
+        border: 10px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .container .card .content .imgBox img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container .card .content .contentBox h3 {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+        margin: 20px 0 10px;
+        line-height: 1.1em;
+    }
+
+    .container .card .content .contentBox h3 span {
+        font-size: 12px;
+        font-weight: 300;
+        text-transform: initial;
+    }
+
+    .container .card .social-media-logo {
+        position: absolute;
+        bottom: 50px;
+        display: flex;
+    }
+
+    .container .card .social-media-logo li {
+        list-style: none;
+        margin: 0 10px;
+        transform: translateY(40px);
+        transition: 0.5s;
+        opacity: 0;
+        transition-delay: calc(0.1s * var(--i));
+
+    }
+
+    .container .card:hover .social-media-logo li {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    .container .card .social-media-logo li a {
+        color: white;
+        font-size: 24px;
+
+    }
+
+    .sub-heading {
+        font-size: clamp(15px, 3vw, 20px);
+        color: rgb(255, 255, 255);
+        margin-bottom: 25px;
+        position: relative;
+        text-shadow: 1px 1px 1px #919191,
+        1px 1px 1px #919191,
+        1px 2px 1px #919191
+    }
+
+    .heading,
+    .sub-heading {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .heading h1:not(#sub-heading) {
+        font-size: clamp(28px, 5vw, 50px);
+        color:rgb(255, 255, 255);
+        margin-bottom: 25px;
+        position: relative;
+        -webkit-text-stroke: 1.7px black;
+    }
+
+    .heading p {
+        font-size: clamp(20px, 3vw, 22px);
+        color: #ffffff;
+        margin-bottom: 35px;
+        
+    }
+
+    @media screen and (max-width: 1010px) {
+        .heading {
+            padding: 0px 20px;
+        }
+
+        .heading h1 {
+            font-size: 36px;
+        }
+    }
+</style>
+
+<body>
+    <section>
+        <div class='heading'>
+            <h1>
+                VeriTech Software IT Service
+            </h1>
+            <p>
+                Welcome to VeriTech Software IT Service, where a committed group of experts collaborates to advance the
+                software industry's level of innovation,
+                creativity, and knowledge. Learn about the people who contribute to the success of our business.
+            </p>
+        </div>
+        <div class="line"></div>
+        <div class='heading'>
+            <h1>
+                Meet Our Team
+            </h1>
+        </div>
+        <div class='sub-heading'>
+            <h1>
+                Leadership / Management Team
+            </h1>
+
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male1.avif" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Founder Name<br><span>Founder/CEO</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female1.avif" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Founder Name<br><span>Founder/CEO</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male2.avif" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>VP Name<br><span>VP, Development</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female2.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>VP Name<br><span>VP, Sales & Marketing</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male3.avif" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>VP Name<br><span>VP, Finance & Operation</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class='sub-heading'>
+            <h1>
+                Development Team
+            </h1>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female3.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Developer Name<br><span>Team Lead, SE</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male4.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Developer Name<br><span>Software Engineer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female4.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Developer Name<br><span>Software Engineer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male5.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Developer Name<br><span>Software Engineer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female5.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Developer Name<br><span>Software Engineer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male1.avif" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Developer Name<br><span>Software Engineer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female1.avif" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Developer Name<br><span>Software Engineer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class='sub-heading'>
+            <h1>
+                Sales And Marketing Team
+            </h1>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male2.avif" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Employee Name<br><span>Team Lead</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female2.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Employee Name<br><span>Sales Officer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male3.avif" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Employee Name<br><span>Sales Officer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female3.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Employee Name<br><span>Sales Officer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male4.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Employee Name<br><span>Marketing Officer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/female4.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Employee Name<br><span>Marketing Officer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgBox">
+                        <img src="./Images/male5.jpeg" alt="">
+                    </div>
+                    <div class="contentBox">
+                        <h3>Employee Name<br><span>Marketing Officer</span></h3>
+                    </div>
+                </div>
+
+                <ul class="social-media-logo">
+                    <li style="--i:1">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
